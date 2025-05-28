@@ -110,6 +110,31 @@ class block_hybridrecom extends block_base {
         }
 
         $output .= '<div style="display: flex; flex-flow: column nowrap; aligh-items: center; justify-content: center; gap: 0.5em;">';
+        /*
+        Necesary CSS for the tooltip functionality
+        <style>
+        .tooltip:hover span { 
+            opacity: 1;
+            visibility: visible;
+        }
+        .tooltip span {
+            padding: 10px;
+            top: 20px;
+            min-width: 75px;
+            max-width: 100%;
+            background-color: #000000; 
+            color: #FFFFFF;
+            height: auto;
+            border-radius: 5px; 
+            opacity: 0; 
+            position:absolute;
+            visibility: hidden;
+            word-wrap: break-word;
+            transition: all 0.5s;
+        }
+        </style>
+
+        */
 
         // Asing css classes to the modules for icon color
         $colormap = array(
@@ -143,7 +168,7 @@ class block_hybridrecom extends block_base {
                 $resource_name = format_string($course_module->name);
                 $course_shortname = format_string($course->shortname);
                 $resource_link = new moodle_url('/mod/' . $resource->modulename . '/view.php', array('id' => $course_module->id));
-                $output .= '<div style="background-color: #f8f8ff; border-radius: 10px; padding: 0.75em 1.25em;" class> <div class="smaller activityiconcontainer '. $colormap[$resource->modulename] .'" style="display: inline; padding: 0;"> <img src="' . $icon . '" class="activityicon " data-region="activity-icon" data-id="' . $module_id . '" alt> </div> <a href="' . $resource_link . '">' . $resource_name . '</a> </div>';
+                $output .= '<div style="background-color: #f8f8ff; border-radius: 10px; padding: 0.75em 1.25em; position: relative" class="tooltip"> <div class="smaller activityiconcontainer '. $colormap[$resource->modulename] .'" style="display: inline; padding: 0;"> <img src="' . $icon . '" class="activityicon " data-region="activity-icon" data-id="' . $module_id . '" alt> </div> <a href="' . $resource_link . '">' . $resource_name . '</a> <div style="position: absolute; right: -0.5rem; top: -0.5rem; background-color: gray; border-radius: 100%; font-size: 0.75em; width: 1.5rem; height: 1.5rem; display: flex; justify-content: center; align-items: center; color: white; font-weight: 600; cursor: pointer; user-select: none;">i</div><span>Explanation of the recommendation that is very long</span></div>';
 
             }
         }
