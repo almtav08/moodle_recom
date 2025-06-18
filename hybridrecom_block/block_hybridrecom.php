@@ -51,7 +51,7 @@ class block_hybridrecom extends block_base {
         $this->content = new stdClass();
         $this->content->footer = '';
 
-        $this->content->text = '<b>What should you do next?</b> <br> <hr>';
+        $this->content->text = '<div style="padding: 0.75em 1.25em; position: relative;"> <b>What should you do next?</b> <button commandfor="disclaimer" command="show-modal" style=" position: absolute; right: -0.5rem; top: -0.5rem; background-color: gray; border-radius: 100%; font-size: 0.75em; width: 1.5rem; height: 1.5rem; display: flex; justify-content: center; align-items: center; color: white; font-weight: 600; cursor: pointer; user-select: none; border: none;">i</button> </div> <br> <hr>';
 
         // Make a request here to an external API to fetch data.
         $data = $this->fetch_data_from_api($USER->id);
@@ -110,6 +110,16 @@ class block_hybridrecom extends block_base {
         }
 
         $output .= '<div style="display: flex; flex-flow: column nowrap; aligh-items: center; justify-content: center; gap: 0.5em;">';
+        $output .= '<dialog id="disclaimer" style="max-width: 50rem;">
+            <h2>Disclaimer</h2>
+            <p>
+              The recommendations provided by this system are generated using advanced artificial intelligence techniques. Rather than analyzing the content of the resources directly, the system leverages behavioral patterns from other users along with expert-defined rules to offer suggestions tailored to your potential interests.
+            </p>
+            <p>
+              While the system is designed to provide relevant and helpful recommendations, users are encouraged to complement them with their own judgment to ensure the best possible experience.
+            </p>
+            <button commandfor="disclaimer" command="close" style="padding-block: 4px; padding-inline: 8px; cursor: pointer;">Close</button>
+          </dialog>'
         /*
         Necesary CSS for the tooltip functionality
         <style>

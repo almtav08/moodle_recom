@@ -149,6 +149,12 @@ If you encounter problems during installation or use of the system:
 - Make sure all prerequisites are correctly installed
 - Verify that the directory permissions in Moodle are adequate
 
+## AI Disclaimer
+
+The recommendations provided by this system are generated using advanced artificial intelligence techniques. Rather than analyzing the content of the resources directly, the system leverages behavioral patterns from other users along with expert-defined rules to offer suggestions tailored to your potential interests.
+
+While the system is designed to provide relevant and helpful recommendations, users are encouraged to complement them with their own judgment to ensure the best possible experience.
+
 ## Contact Information
 
 If you have any questions, you can contact:
